@@ -31,6 +31,6 @@ dependencies {
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-    System.getProperty 'chromeOptions.prefs',
+    systemProperty 'chromeOptions.prefs',
             System.getProperty('ChromeOptions.prefs', "profile.password_manager_leak_detection=false")
 }
