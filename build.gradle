@@ -22,9 +22,15 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.36'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
     testImplementation 'org.slf4j:slf4j-simple:2.0.3'
+
+    testImplementation 'io.rest-assured:rest-assured:5.5.0'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+
 }
 
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    System.getProperty 'chromeOptions.prefs',
+            System.getProperty('ChromeOptions.prefs', "profile.password_manager_leak_detection=false")
 }
