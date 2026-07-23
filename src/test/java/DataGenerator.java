@@ -30,9 +30,9 @@ public class DataGenerator {
 
 
 
-        public static RegistrationDto getRegisteredUser(String status) {
+        public static RegistrationDto getRegisteredUser (String status)  {
             var user = getUser(status);
-            ApiHelper.sendRequest (user);
+           sendRequest (user);
             return user;
         }
     }
