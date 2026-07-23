@@ -1,7 +1,11 @@
+package data;
+
 import com.github.javafaker.Faker;
 import lombok.Value;
 
 import java.util.Locale;
+
+import static data.ApiHelper.sendRequest;
 
 public class DataGenerator {
     private static final Faker FAKER = new Faker(new Locale("en"));
@@ -20,13 +24,12 @@ public class DataGenerator {
 
     public static class Registration {
         private Registration() {
-
         }
 
         public static RegistrationDto getUser(String status) {
             return new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
-        }
 
+        }
 
         public static RegistrationDto getRegisteredUser(String status) {
             var user = getUser(status);
@@ -34,7 +37,6 @@ public class DataGenerator {
             return user;
         }
     }
-
 
     @Value
     public static class RegistrationDto {
