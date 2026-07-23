@@ -23,20 +23,20 @@ public class DataGenerator {
 
         }
 
-        public static RegistrationDto getUser (String status) {
-            return new RegistrationDto(getRandomLogin(),getRandomPassword(),status);
+        public static RegistrationDto getUser(String status) {
+            return new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
         }
 
 
-
-
-        public static RegistrationDto getRegisteredUser (String status)  {
+        public static RegistrationDto getRegisteredUser(String status) {
             var user = getUser(status);
-           sendRequest (user);
+            sendRequest(user);
             return user;
         }
     }
-@Value
+
+
+    @Value
     public static class RegistrationDto {
         String login;
         String password;
