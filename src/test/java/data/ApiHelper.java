@@ -16,15 +16,17 @@ public class ApiHelper {
             .setContentType(ContentType.JSON)
             .log(LogDetail.ALL)
             .build();
-    private ApiHelper(){
+
+    private ApiHelper() {
 
     }
-    static void sendRequest (DataGenerator.RegistrationDto user){
+
+    static void sendRequest(DataGenerator.RegistrationDto user) {
         given()
                 .spec(requestSpec)
                 .body(user)
                 .when().log().all()
-                .post("/api/sustem/users")
+                .post("/api/system/users")
                 .then().log().all()
                 .statusCode(200);
     }
